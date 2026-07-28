@@ -1,0 +1,99 @@
+/* Core Structural Wrapper */
+.homepage-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+  min-height: calc(100vh - 70px);
+}
+
+/* Header Context Section */
+.storefront-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 20px;
+  margin-bottom: 32px;
+}
+
+.storefront-header h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111111;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.75px;
+}
+
+.storefront-subtitle {
+  font-size: 15px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.product-results-count {
+  font-size: 14px;
+  color: #4b5563;
+  background-color: #f3f4f6;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 400;
+}
+
+/* Modern CSS Grid Engine 
+   Automatically scales items cleanly based on device viewport sizes
+*/
+.products-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+  width: 100%;
+}
+
+/* Clean fallback layout for unmatched search terms */
+.empty-search-state {
+  text-align: center;
+  padding: 80px 20px;
+  background: #ffffff;
+  border: 1px dashed #d1d5db;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 40px auto 0 auto;
+}
+
+.empty-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.empty-search-state h3 {
+  font-size: 20px;
+  color: #111111;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.empty-search-state p {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive breakpoint layout collapses */
+@media (max-width: 768px) {
+  .storefront-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .homepage-wrapper {
+    padding: 24px 16px;
+  }
+
+  .storefront-header h1 {
+    font-size: 26px;
+  }
+}

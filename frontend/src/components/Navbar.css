@@ -1,0 +1,242 @@
+/* Container Wrapper for Sticky Header Tracking */
+.navbar-container {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  height: 44px; /* Fixes height shifts */
+}
+
+/* Brand Logo Typography */
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111111;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.nav-logo span {
+  color: #2563eb; /* Clean blue e-commerce accent shift */
+}
+
+/* Embedded Search Capsule Layout */
+.nav-center {
+  flex: 1;
+  max-width: 550px;
+  margin: 0 40px;
+}
+
+.search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 10px 44px 10px 16px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px; /* Clean crisp corner rounding matches modern cards */
+  background-color: #f9fafb;
+  color: #111111;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-wrapper input:focus {
+  background-color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.search-btn-icon {
+  position: absolute;
+  right: 4px;
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: color 0.15s ease;
+}
+
+.search-wrapper input:focus + .search-btn-icon {
+  color: #2563eb;
+}
+
+/* Right Navigation Links Controls Grid */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-item-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.nav-item-link:hover {
+  color: #111111;
+}
+
+/* Cart Icon Badge System */
+.cart-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #374151;
+}
+
+.cart-link:hover .cart-icon-wrapper {
+  color: #2563eb;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 99px;
+  min-width: 10px;
+  text-align: center;
+  line-height: 11px;
+  border: 2px solid #ffffff;
+}
+
+.cart-text {
+  font-weight: 500;
+}
+
+/* Structural Layout Dividers */
+.nav-divider {
+  width: 1px;
+  height: 20px;
+  background-color: #e5e7eb;
+}
+
+/* Admin Styling Tag */
+.admin-tag {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+/* Auth Actions Button Configurations */
+.user-menu, .auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-greeting {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.user-greeting strong {
+  color: #111111;
+}
+
+.login-nav-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.login-nav-link:hover {
+  color: #2563eb;
+}
+
+.logout-btn {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #374151;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background-color: #fee2e2;
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+
+.register-nav-btn {
+  background: #111111;
+  color: #ffffff;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.register-nav-btn:hover {
+  background: #1f2937;
+}
+
+/* Viewport Adjustments for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar-inner {
+    flex-direction: column;
+    height: auto;
+    padding: 12px;
+    gap: 12px;
+  }
+  .nav-center {
+    width: 100%;
+    margin: 0;
+    max-width: none;
+  }
+  .nav-right {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .nav-divider {
+    display: none;
+  }
+}

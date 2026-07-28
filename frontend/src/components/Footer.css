@@ -1,0 +1,84 @@
+.global-site-footer {
+  background-color: #111111;
+  color: #aaaaaa;
+  padding: 40px 20px 20px 20px;
+  margin-top: auto; /* Pushes footer to the bottom of flexible layouts */
+  border-top: 1px solid #222222;
+  font-family: sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+
+.footer-brand-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-brand-logo {
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+}
+
+.footer-brand-tagline {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-links-section {
+  min-width: 180px;
+}
+
+.footer-links-section h4 {
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-links-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links-section ul li a {
+  color: #aaaaaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links-section ul li a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid #222222;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+/* Responsive Scaling */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+}

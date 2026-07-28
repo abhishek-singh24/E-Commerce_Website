@@ -1,0 +1,244 @@
+.pdp-layout-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.pdp-loading-spinner {
+  text-align: center;
+  padding: 80px;
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.pdp-main-card {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 40px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.pdp-gallery-panel img {
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #f9fafb;
+}
+
+.pdp-details-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.pdp-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #111111;
+  margin: 0 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.pdp-rating-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.stars-val {
+  color: #d97706;
+  font-weight: 700;
+  background: #fef3c7;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.count-label { color: #6b7280; }
+
+.pdp-price-tag {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111111;
+  margin-bottom: 20px;
+}
+
+.pdp-description-body {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+}
+
+.pdp-stock-status-row {
+  margin-bottom: 32px;
+  font-size: 14px;
+}
+
+.status-label {
+  color: #6b7280;
+  margin-right: 8px;
+}
+
+.status-indicator-tag {
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.status-in { background: #dcfce7; color: #16a34a; }
+.status-out { background: #fee2e2; color: #dc2626; }
+
+.pdp-add-cart-btn {
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  width: 100%;
+  max-width: 320px;
+}
+
+.pdp-add-cart-btn:hover:not(:disabled) { background: #2563eb; }
+.pdp-add-cart-btn:disabled { background: #e5e7eb; color: #9ca3af; cursor: not-allowed; }
+
+.pdp-reviews-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.pdp-sub-section-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.pdp-sub-section-card h3 {
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  color: #111111;
+}
+
+.pdp-empty-state-text { color: #9ca3af; font-size: 14px; }
+
+.pdp-reviews-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.pdp-review-bubble {
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 14px;
+}
+
+.bubble-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bubble-header h5 { font-size: 14px; margin: 0; color: #111111; }
+
+.review-delete-action-btn {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.bubble-rating-row { color: #d97706; font-size: 12px; margin: 4px 0; letter-spacing: 1px; }
+.bubble-comment-body { font-size: 14px; color: #4b5563; margin: 0; line-height: 1.4; }
+
+.form-element-block { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.form-element-block label { font-size: 13px; font-weight: 600; color: #4b5563; }
+
+.form-element-block select,
+.form-element-block textarea {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  font-family: inherit;
+}
+
+.composer-submit-btn {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.non-auth-alert { text-align: center; color: #6b7280; font-size: 14px; }
+.non-auth-alert a { color: #2563eb; font-weight: 600; text-decoration: none; }
+
+@media (max-width: 768px) {
+  .pdp-main-card, .pdp-reviews-split-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+
+
+.review-action-container {
+  display: flex;
+  align-items: center;
+}
+
+.pdp-inline-confirm-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.confirm-text {
+  font-size: 0.75rem;
+  color: #991b1b;
+  font-weight: 500;
+}
+
+.confirm-btn-yes, .confirm-btn-no {
+  border: none;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirm-btn-yes {
+  background-color: #dc2626;
+  color: white;
+}
+
+.confirm-btn-yes:hover { background-color: #b91c1c; }
+
+.confirm-btn-no {
+  background-color: #ffffff;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+
+.confirm-btn-no:hover { background-color: #f3f4f6; }

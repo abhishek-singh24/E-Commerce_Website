@@ -1,0 +1,151 @@
+/* Centered background canvas layout */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 70px); /* accounts for typical navbar offsets */
+  background: #f8f9fa;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+/* The Core Card Container UI */
+.form-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.form-card h2 {
+  margin: 0 0 6px 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: #111111;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 28px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Structural Form Labels and Spacing */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #444444;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+/* Input Fields UI */
+.input-group input {
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  outline: none;
+  background-color: #fff;
+  color: #111111;
+  transition: border-color 0.15s ease-in-out;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.input-group input:focus {
+  border-color: #111111; /* Clean dark accent borders */
+}
+
+/* Main Action Buttons */
+.auth-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #111111; /* Solid dark theme button matches e-commerce headers */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-top: 8px;
+}
+
+.auth-btn:hover {
+  background: #333333;
+}
+
+.auth-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Bottom Navigation Options */
+.auth-footer {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: #555555;
+}
+
+.auth-footer a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Inline Status Banners */
+.auth-status-banner {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  animation: slideDownFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Error UI Variant */
+.auth-status-banner.error-banner {
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: #991b1b;
+}
+
+/* Success UI Variant */
+.auth-status-banner.success-banner {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+/* Smooth Entrance Slide Utility */
+@keyframes slideDownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

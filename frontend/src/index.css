@@ -1,0 +1,164 @@
+body{
+
+margin:0;
+font-family:Arial;
+
+}
+
+.cart-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 25px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.cart-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.cart-details {
+  flex: 1;
+}
+
+.price {
+  color: #b12704;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.quantity-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.quantity-box button {
+  width: 35px;
+  height: 35px;
+  font-size: 18px;
+  border: none;
+  background: #ffd814;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.remove-btn {
+  margin-top: 15px;
+  background: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.cart-summary {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: right;
+}
+
+.cart-summary h2 {
+  color: #b12704;
+}
+
+.products-container{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:20px;
+
+}
+
+
+
+.product-card{
+
+border:1px solid #ddd;
+padding:15px;
+border-radius:10px;
+text-align:center;
+
+}
+
+
+
+.product-card img{
+
+width:200px;
+height:200px;
+object-fit:cover;
+
+}
+
+
+
+button{
+
+padding:10px 20px;
+cursor:pointer;
+
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 30px;
+
+  background: #222;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: orange;
+}
+
+.form-container {
+  width: 350px;
+  margin: 40px auto;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-container input {
+  padding: 10px;
+}
+
+.form-container button {
+  padding: 10px;
+}
+
+.quantity-box button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
