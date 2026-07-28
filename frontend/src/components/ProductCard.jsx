@@ -9,7 +9,7 @@ function ProductCard({ product }) {
     if (imagePath.startsWith("http")) return imagePath;
 
     // Connect to live Render server on Vercel, or Localhost for local testing
-    const BACKEND_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+    const BACKEND_URL = import.meta.env.VITE_API_URL;
     return imagePath.startsWith("/") ? `${BACKEND_URL}${imagePath}` : `${BACKEND_URL}/uploads/${imagePath}`;
   };
 

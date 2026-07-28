@@ -5,7 +5,7 @@ import "./Cart.css";
 import Footer from "../components/Footer";
 
 function Cart() {
-  const BACKEND_URL = "http://localhost:5000";
+  const BACKEND_URL = import.meta.env.VITE_API_URL;
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
   const total = cart.reduce((sum, item) => sum + Number(item.price) * (item.quantity || 1), 0);
 

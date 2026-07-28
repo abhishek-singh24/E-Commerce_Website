@@ -4,7 +4,7 @@ import { getUserOrders } from "../api/api";
 import "./MyOrders.css";
 
 function MyOrders() {
-  const BACKEND_URL = "http://localhost:5000";
+  const BACKEND_URL = import.meta.env.VITE_API_URL;
   const [orders, setOrders] = useState([]);
   const user = JSON.parse(localStorage.getItem("user"));
 

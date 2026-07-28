@@ -20,7 +20,7 @@ function ProductDetails() {
     if (!imagePath) return "https://via.placeholder.com/300";
     if (imagePath.startsWith("http")) return imagePath;
 
-    const BACKEND_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+    const BACKEND_URL = import.meta.env.VITE_API_URL;
     return imagePath.startsWith("/") ? `${BACKEND_URL}${imagePath}` : `${BACKEND_URL}/uploads/${imagePath}`;
   };
 
