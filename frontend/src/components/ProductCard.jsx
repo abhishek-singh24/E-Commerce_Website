@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./ProductCard.css";
 
 function ProductCard({ product }) {
-<<<<<<< HEAD
   // Helper function to dynamically process image URLs
   const getImageUrl = (imagePath) => {
     if (!imagePath) return "https://via.placeholder.com/300";
@@ -13,9 +12,6 @@ function ProductCard({ product }) {
     const BACKEND_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
     return imagePath.startsWith("/") ? `${BACKEND_URL}${imagePath}` : `${BACKEND_URL}/uploads/${imagePath}`;
   };
-=======
-  const BACKEND_URL = "http://localhost:5000"; 
->>>>>>> 2a1e0654be6f4795994a174fbf3eee304dc2bdc6
 
   // Local state to display dynamic micro-toast banners inside the card
   const [feedback, setFeedback] = useState({ text: "", type: "" });
@@ -67,11 +63,7 @@ function ProductCard({ product }) {
       {/* Product Image Capsule Area */}
       <div className="product-image-wrapper">
         <img 
-<<<<<<< HEAD
           src={getImageUrl(product.image)} 
-=======
-          src={`${BACKEND_URL}${product.image}`} 
->>>>>>> 2a1e0654be6f4795994a174fbf3eee304dc2bdc6
           alt={product.name} 
           loading="lazy" 
         />

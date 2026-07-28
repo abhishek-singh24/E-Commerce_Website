@@ -14,11 +14,7 @@ function Admin() {
     name: "", 
     description: "", 
     price: "", 
-<<<<<<< HEAD
     image: "", 
-=======
-    image: null, 
->>>>>>> 2a1e0654be6f4795994a174fbf3eee304dc2bdc6
     stock: "" 
   });
   
@@ -66,22 +62,11 @@ function Admin() {
   }, []);
 
   const handleChange = (e) => {
-<<<<<<< HEAD
     const { name, value } = e.target;
     if (name === "image") {
       setProduct({ ...product, image: value });
       // Live preview as the admin types/pastes the URL
       setPreviewUrl(value);
-=======
-    const { name, value, files } = e.target;
-    if (name === "image") {
-      const selectedFile = files[0];
-      if (selectedFile) {
-        setProduct({ ...product, image: selectedFile });
-        // Generate temporary preview link
-        setPreviewUrl(URL.createObjectURL(selectedFile));
-      }
->>>>>>> 2a1e0654be6f4795994a174fbf3eee304dc2bdc6
     } else {
       setProduct({ ...product, [name]: value });
     }
@@ -90,7 +75,6 @@ function Admin() {
  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-<<<<<<< HEAD
       const payload = {
         name: product.name,
         description: product.description,
@@ -101,52 +85,18 @@ function Admin() {
 
       if (editId) {
         const res = await API.put(`/products/update/${editId}`, payload);
-=======
-      const formData = new FormData();
-      formData.append("name", product.name);
-      formData.append("description", product.description);
-      formData.append("price", product.price);
-      formData.append("stock", product.stock);
-      
-      // Check if product.image is a File object (user chose a new asset)
-      if (product.image instanceof File) {
-        formData.append("image", product.image);
-      } else if (typeof product.image === "string") {
-        // If it's a string path, pass it as a text field key separate from 'image'
-        formData.append("existingImage", product.image);
-      }
-
-      const config = {
-        headers: { "Content-Type": "multipart/form-data" }
-      };
-
-      if (editId) {
-        const res = await API.put(`/products/update/${editId}`, formData, config);
->>>>>>> 2a1e0654be6f4795994a174fbf3eee304dc2bdc6
         setMessage(res.data.message);
         setTimeout(() => setMessage(""), 3000);
         setEditId(null);
       } else {
-<<<<<<< HEAD
         const res = await API.post("/products/add", payload);
-=======
-        const res = await API.post("/products/add", formData, config);
->>>>>>> 2a1e0654be6f4795994a174fbf3eee304dc2bdc6
         setMessage(res.data.message);
         setTimeout(() => setMessage(""), 3000);
       }
 
       // Reset application states cleanly
-<<<<<<< HEAD
       setProduct({ name: "", description: "", price: "", image: "", stock: "" });
       setPreviewUrl("");
-=======
-      setProduct({ name: "", description: "", price: "", image: null, stock: "" });
-      setPreviewUrl("");
-      
-      const fileInput = document.getElementById("adminProductImageInput");
-      if (fileInput) fileInput.value = "";
->>>>>>> 2a1e0654be6f4795994a174fbf3eee304dc2bdc6
 
       fetchProducts();
       fetchStats();
@@ -172,7 +122,6 @@ function Admin() {
       name: prod.name,
       description: prod.description,
       price: prod.price,
-<<<<<<< HEAD
       image: prod.image || "",
       stock: prod.stock
     });
@@ -187,17 +136,6 @@ function Admin() {
       }
     } else {
       setPreviewUrl("");
-=======
-      image: prod.image, // 🛠️ FIXED: Stores the existing image path fallback string instead of clean null override
-      stock: prod.stock
-    });
-    
-    // Check if image is an absolute/relative server path string and format preview safely
-    if (typeof prod.image === "string" && prod.image.startsWith("/")) {
-      setPreviewUrl(`http://localhost:5000${prod.image}`);
-    } else {
-      setPreviewUrl(prod.image || "");
->>>>>>> 2a1e0654be6f4795994a174fbf3eee304dc2bdc6
     }
   };
 
@@ -279,7 +217,6 @@ function Admin() {
                 <input type="number" name="price" value={product.price} placeholder="Price Tag (INR)" onChange={handleChange} required />
               </div>
               
-<<<<<<< HEAD
               {/* Image URL Input Field Block */}
               <div className="admin-input-group image-upload-field-container">
                 <label htmlFor="adminProductImageInput" className="custom-file-upload-label">
@@ -305,27 +242,6 @@ function Admin() {
                       className="image-preview-thumbnail"
                       onError={(e) => { e.target.style.display = "none"; }}
                     />
-=======
-              {/* File Uploader Container Field Block */}
-              <div className="admin-input-group image-upload-field-container">
-                <label htmlFor="adminProductImageInput" className="custom-file-upload-label">
-                  {editId ? "Replace Product Image (Optional)" : "Choose Product Image File"}
-                </label>
-                <input 
-                  id="adminProductImageInput"
-                  name="image" 
-                  type="file" 
-                  accept="image/*"
-                  onChange={handleChange} 
-                  required={!editId} 
-                />
-                
-                {/* Dynamically Render Image Preview */}
-                {previewUrl && (
-                  <div className="product-image-preview-wrapper">
-                    <p>Selected Asset Preview:</p>
-                    <img src={previewUrl} alt="Product preview" className="image-preview-thumbnail" />
->>>>>>> 2a1e0654be6f4795994a174fbf3eee304dc2bdc6
                   </div>
                 )}
               </div>

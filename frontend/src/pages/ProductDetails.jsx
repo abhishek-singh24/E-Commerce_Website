@@ -6,10 +6,6 @@ import "./ProductDetails.css";
 import Footer from "../components/Footer";
 
 function ProductDetails() {
-<<<<<<< HEAD
-=======
-  const BACKEND_URL = "http://localhost:5000"; 
->>>>>>> 2a1e0654be6f4795994a174fbf3eee304dc2bdc6
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [reviews, setReviews] = useState([]);
@@ -19,7 +15,6 @@ function ProductDetails() {
   // Tracks which specific review is currently showcasing the confirmation toggle
   const [deletingId, setDeletingId] = useState(null);
 
-<<<<<<< HEAD
   // Helper function to dynamically process image URLs
   const getImageUrl = (imagePath) => {
     if (!imagePath) return "https://via.placeholder.com/300";
@@ -29,8 +24,6 @@ function ProductDetails() {
     return imagePath.startsWith("/") ? `${BACKEND_URL}${imagePath}` : `${BACKEND_URL}/uploads/${imagePath}`;
   };
 
-=======
->>>>>>> 2a1e0654be6f4795994a174fbf3eee304dc2bdc6
   const fetchProduct = async () => {
     try {
       const res = await API.get(`/products/${id}`);
@@ -128,11 +121,7 @@ function ProductDetails() {
         <div className="pdp-main-card">
           <div className="pdp-gallery-panel">
             <img 
-<<<<<<< HEAD
               src={getImageUrl(product.image)} 
-=======
-              src={`${BACKEND_URL}${product.image}`} 
->>>>>>> 2a1e0654be6f4795994a174fbf3eee304dc2bdc6
               alt={product.name} 
               loading="lazy" 
             />
