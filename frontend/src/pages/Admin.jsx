@@ -131,7 +131,7 @@ function Admin() {
       if (prod.image.startsWith("http")) {
         setPreviewUrl(prod.image);
       } else {
-        const BACKEND_URL = import.meta.env.VITE_API_URL;
+        const BACKEND_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
         setPreviewUrl(prod.image.startsWith("/") ? `${BACKEND_URL}${prod.image}` : `${BACKEND_URL}/uploads/${prod.image}`);
       }
     } else {
